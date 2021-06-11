@@ -1,0 +1,145 @@
+body {
+  /* background-color: aquamarine; */
+  width: 1200px;
+  /* margin: 0 auto; */
+  /* контент не залазил под хедер задаем паддинг по ширине хедера */
+  padding-top: 80px;
+  text-align: justify;
+}
+::before,
+::after {
+  box-sizing: border-box;
+}
+div {
+  display: block;
+}
+ul {
+  margin: 20px 0 50px;
+  list-style: none;
+}
+button {
+  margin: 0;
+  padding: 10px;
+  border-radius: 4px;
+}
+header {
+  background-color: paleturquoise;
+  padding: 20px;
+  font-size: 34px;
+  /* фиксированное положение хедера, надо задать выс и шир, иначе не видно */
+  position: fixed;
+  width: 100%;
+  min-height: auto;
+  /* чтобы хедер прилип к верху экрана  */
+  top: 0;
+  left: 0;
+  /* чтобы абсолютные элементы не перекрывали хедер,повышаем ему индекс  */
+  z-index: 100;
+}
+.positioing .text {
+  text-align: center;
+  font-size: 24px;
+}
+.soderganie {
+  font-size: 34px;
+}
+.picture {
+  /* display: block; */
+  width: 100%;
+}
+
+.product {
+  width: 370px;
+  background-color: #fff;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.product-meta {
+  padding: 15px;
+}
+.product-name {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.product-price {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.product-actions {
+  outline: 3px solid orange;
+  display: flex;
+  position: absolute;
+  /* top: 0%;
+  right: 0%; если менять.усложнять положение, смотри ниже*/
+  opacity: 0;
+  /* значит невидимка, ставим для ховера, статично скрыто */
+  transition: 500ms opacity linear;
+  /* плавное появление\скрытие за 500мс */
+}
+.product:hover .product-actions {
+  opacity: 1;
+  /* при наведении на карточку появляется блок кнопок */
+}
+.product-actions .icon {
+  width: 32px;
+  height: 32px;
+}
+.product-thumb {
+  position: relative;
+}
+/*  псевдоэлемент бефор */
+.product-thumb::before {
+  display: inline-block;
+  /* чтобы проявился надо задать выс и шир, в блочном элементе */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* левым верхним углом в верхний левый угол родителя */
+  content: '';
+  /* обязательное поле */
+  width: 100%;
+  height: 100%;
+  /* 100% высоты и ширины родителя, т.е. покрыть полностью */
+  background-color: rgba(255, 2, 2, 0.411);
+  opacity: 0;
+  /* делаем невидимым, чтобы анимировать на видимость */
+}
+.product-thumb:hover::before {
+  opacity: 1;
+  /* при ховере по product-thumb возьми его before и покажи его */
+}
+/* ------позиционирование по центру */
+.product-actions {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* первые 2строки говорят: левым верхним углом встань на 50%ширины и 50%высоты родителя. Трансформ с минусом значит: подвинься влево на 50% СВОЕЙ ширины и вниз на 50% СВОЕЙ высоты.. ЭТО ИДЕАЛЬНЫЙ ЦЕНТР */
+
+/* modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(137, 43, 226, 0.377);
+}
+.modal {
+  /* ПОРЯДОК ЗАПИСИ: ПОЗИЦИЯ, ГЕОМЕТРИЯ, ВСЕ ОСТАЛЬНОЕ!!! */
+  position: absolute;
+  /* центрируем */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background-color: #fff;
+  padding: 20px;
+}
+.is-hidden {
+  /* скрывает оверлей */
+  opacity: 0;
+  /* позволяет пробиться (кликнуть) через слой модалки к нашему контенту. т.к. оверлей стоит сверху, он не пропускает клик */
+  pointer-events: none;
+}

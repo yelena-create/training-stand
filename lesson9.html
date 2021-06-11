@@ -5,37 +5,144 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <ul>
-      <li id="positioning">Позиционирование</li>
-      <li id="modalka">Модальное окно</li>
-      <li id="drop-down-box">Выпадающее меню</li>
-    </ul>
+    <header>
+      <a href="/index.html">назад на главную</a>
+    </header>
+    <main>
+      <div class="positioing">
+        <ul class="soderganie">
+          <li>
+            <a href="" id="positioning">Позиционирование</a>
+          </li>
+          <li>
+            <a href="" id="modalka">Модальное окно</a>
+          </li>
+          <li>
+            <a href="" id="drop-down-box">Выпадающее меню</a>
+          </li>
+        </ul>
 
-    #positioning
-    <ul>
-      <l>
-        <p>Relative</p>
-        <div class="card">
-          <img src="" alt="" />
-          <h3></h3>
-          <p></p>
+        <p class="#positioning">positioning</p>
+        <article class="product">
+          <div class="product-thumb">
+            <img class="picture" src="./images/fruit1.jpg" alt="" />
+            <div class="product-actions">
+              <button aria-label="" class="item">
+                <svg class="icon" width="50px" height="50px">
+                  <use href="./images/icons/sprite.svg#facebook"></use>
+                </svg>
+              </button>
+              <button aria-label="" class="item">
+                <svg class="icon" width="50px" height="50px">
+                  <use href="./images/icons/sprite.svg#instagram"></use>
+                </svg>
+              </button>
+              <button aria-label="" class="item">
+                <svg class="icon" width="50px" height="50px">
+                  <use href="./images/icons/sprite.svg#linkedin"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="product-meta">
+            <h2 class="product-name">красные яблоки</h2>
+            <p class="product-price">цена 100 кредитов</p>
+          </div>
+        </article>
+        <p class="text">
+          можно задать переменную"высота хедера" <br />
+          в хедере ставим высота=переменная,<br />
+          в боди паддинг=переменная,<br />
+          тогда при смене высоты хедера автоматически рассчитается отступ,<br />
+          который не будет закрывать контент. <br />
+          Вообще это js
+        </p>
+      </div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ullam nulla
+      iusto magni quos qui, numquam pariatur delectus totam nobis corrupti
+      facilis alias deleniti ut, cumque incidunt illum odio blanditiis non
+      magnam itaque, nisi soluta? Recusandae aspernatur et fugiat iure tenetur?
+      Ea obcaecati eos ratione, voluptate in odio consectetur tenetur iure a
+      placeat ut facere aperiam? Asperiores esse, nisi, fugit eaque fuga
+      perspiciatis reiciendis accusantium consequatur in illo nesciunt suscipit?
+      Dolorum ipsa fugit perferendis sunt repellat nostrum consequuntur adipisci
+      laudantium excepturi, molestiae voluptate, distinctio sequi alias cum
+      eligendi odio facilis quas natus, aspernatur ratione. Eum, quae obcaecati.
+      Eligendi illo cumque labore optio quibusdam ut laudantium natus amet
+      accusamus repudiandae! Ad atque adipisci expedita, quidem accusantium
+      quaerat nihil sunt doloribus dolores beatae, laborum, totam aperiam
+      debitis saepe mollitia sit dicta assumenda? Voluptate dolor ipsam ullam
+
+      <div class="modalka">
+        <p></p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit
+          deserunt fugiat ipsa quam harum magnam dolor! Ab, voluptates vel
+          obcaecati maxime, fugiat atque distinctio adipisci repudiandae,
+          excepturi consectetur totam odio? Eaque voluptatum sapiente, atque rem
+          cum odit perferendis voluptate tempora sit. Totam reprehenderit
+          provident aut doloribus inventore! Placeat quasi sint quas cum autem,
+          ex qui. Tempora quisquam, dolore voluptatibus esse, pariatur aliquid,
+          magni facere eaque accusamus tempore quibusdam recusandae atque
+          cupiditate adipisci alias consectetur quidem totam? Impedit nam,
+          magnam quidem, dolores dolorum dolor ipsum velit porro labore dolorem
+          error reprehenderit assumenda numquam, possimus tempora in ducimus
+          harum veritatis eum.
+        </p>
+        <button data-modal-open>открыть модалку</button>
+        <!-- задний серый фон модалки - бекдроп -->
+        <div class="backdrop is-hidden" data-modal>
+          <!-- вставляем внутрь модальное окно 
+          добавляем спец-класс скрытия видимости is-hidden-->
+          <div class="modal">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              non neque earum recusandae beatae deserunt consectetur nemo quod
+              tempore dignissimos!
+            </p>
+            <button data-modal-close>закрыть</button>
+          </div>
         </div>
-      </l>
-      <l>
-        <p>Absolute</p>
-      </l>
-      <l>
-        <p>Fixed</p>
-      </l>
-      <l>
-        <p>sticky</p>
-      </l>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit
+          deserunt fugiat ipsa quam harum magnam dolor! Ab, voluptates vel
+          obcaecati maxime, fugiat atque distinctio adipisci repudiandae,
+          excepturi consectetur totam odio? Eaque voluptatum sapiente, atque rem
+          cum odit perferendis voluptate tempora sit. Totam reprehenderit
+          provident aut doloribus inventore! Placeat quasi sint quas cum autem,
+          ex qui. Tempora quisquam, dolore voluptatibus esse, pariatur aliquid,
+          magni facere eaque accusamus tempore quibusdam recusandae atque
+          cupiditate adipisci alias consectetur quidem totam? Impedit nam,
+          magnam quidem, dolores dolorum dolor ipsum velit porro labore dolorem
+          error reprehenderit assumenda numquam, possimus tempora in ducimus
+          harum veritatis eum.
+        </p>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="./js/modal.js">
+      //     (() => {
+      //   const refs = {
+      //     openModalBtn: document.querySelector('[data-modal-open]'),
+      //     closeModalBtn: document.querySelector('[data-modal-close]'),
+      //     modal: document.querySelector('[data-modal]'),
+      //   };
 
-      <l></l>
-    </ul>
+      //   refs.openModalBtn.addEventListener('click', toggleModal);
+      //   refs.closeModalBtn.addEventListener('click', toggleModal);
 
-    #modalka #drop-down-box
+      //   function toggleModal() {
+      //     refs.modal.classList.toggle('is-hidden');
+      //   }
+      // })();
+    </script>
   </body>
 </html>
