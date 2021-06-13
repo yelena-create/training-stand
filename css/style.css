@@ -36,6 +36,9 @@ header {
   /* чтобы абсолютные элементы не перекрывали хедер,повышаем ему индекс  */
   z-index: 100;
 }
+.container {
+  padding: 50px;
+}
 .positioing .text {
   text-align: center;
   font-size: 24px;
@@ -65,9 +68,12 @@ header {
   margin-top: 0;
   margin-bottom: 0;
 }
+.product-thumb {
+  position: relative;
+}
 .product-actions {
   outline: 3px solid orange;
-  display: flex;
+  /* display: flex; */
   position: absolute;
   /* top: 0%;
   right: 0%; если менять.усложнять положение, смотри ниже*/
@@ -83,9 +89,6 @@ header {
 .product-actions .icon {
   width: 32px;
   height: 32px;
-}
-.product-thumb {
-  position: relative;
 }
 /*  псевдоэлемент бефор */
 .product-thumb::before {
@@ -106,8 +109,10 @@ header {
 }
 .product-thumb:hover::before {
   opacity: 1;
+
   /* при ховере по product-thumb возьми его before и покажи его */
 }
+
 /* ------позиционирование по центру */
 .product-actions {
   top: 50%;
@@ -137,9 +142,56 @@ header {
   background-color: #fff;
   padding: 20px;
 }
+.annotation {
+  color: red;
+  font-size: 22px;
+}
 .is-hidden {
   /* скрывает оверлей */
   opacity: 0;
   /* позволяет пробиться (кликнуть) через слой модалки к нашему контенту. т.к. оверлей стоит сверху, он не пропускает клик */
   pointer-events: none;
+}
+/* ---------- drop-down-box*/
+.menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+.menu-item {
+  position: relative;
+  margin: 15px;
+  outline: 2px solid tomato;
+}
+.menu-item:hover .submenu {
+  display: block;
+  opacity: 1;
+}
+.menu-item:hover .menu-link {
+  background-color: palevioletred;
+}
+.menu-link {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  background-color: teal;
+  color: #fff;
+}
+.submenu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  /* верх нашего сабменю на 100% от верха родителя , соответственно боттом100% прижмет нижнюю чсть к верхней, райт100% значит 100%ширины родителя отодвинь влево, т.е. полезет слева
+  */
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+  background-color: #ccc;
+  opacity: 0;
+  pointer-events: none;
+}
+.submenu a {
+  text-decoration: none;
 }
