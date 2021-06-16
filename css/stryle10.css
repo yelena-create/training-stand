@@ -292,3 +292,45 @@ button {
   transform: scale(1) translate(-50%, -50%);
   transition: transform 550ms var(--cubic);
 }
+/*############ perspective  */
+/* .perspective .container {
+  display: flex;
+  flex-direction: row;
+} */
+.scene {
+  width: 300px;
+  height: 300px;
+  border: 3px solid #1976d2;
+}
+.box {
+  display: block;
+  height: 100%;
+  background-color: red;
+  background-image: url(../images/smile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: rotateY(0);
+  /* transform: rotateY(45deg) rotateX(39deg); */
+  /* transform: perspective(600px) rotateY(45deg); */
+  transition: transform 500ms linear;
+}
+.scene:hover .box {
+  transform: rotateY(180deg);
+}
+/* ########################## */
+.scene2 {
+  perspective: 600px;
+  width: 330px;
+  height: 330px;
+  outline: 1px solid black;
+}
+.scene2:hover .box2 {
+  transform: scale(1) rotateZ(1turn);
+}
+.box2 {
+  height: 100%;
+  background-color: teal;
+  transform: scale(0);
+  transition: transform 500ms linear;
+}
