@@ -97,29 +97,27 @@
         <h2>Анимация модального окна</h2>
 
         <section class="#modalka">
-        <div class="container">
-          <br />
-          <pre class="annotation">
-ЗАЩИТА ОТ КОПИРОВАНИЯ ТЕКСТА ОТ ПРОСТЫХ ПОЛЬЗОВАТЕЛЕЙ, НЕ ЗНАЮЩИХ О ТУЛЗАХ: 
- user-select: none     НЕ ДАЕТ ВОЗМОЖНОСТИ ВЫБОРА ТЕКСТА ДЛЯ КОПИРОВАНИЯ</pre
-          >
+          <div class="container">
+            <br />
 
-          <button data-modal-open>открыть модалку</button>
-          <!-- задний серый фон модалки - бекдроп -->
-          <div class="backdrop is-hidden" data-modal>
-            <!-- вставляем внутрь модальное окно 
+            <button data-modal-open>открыть модалку</button>
+            <!-- задний серый фон модалки - бекдроп -->
+            <div class="backdrop is-hidden" data-modal>
+              <!-- вставляем внутрь модальное окно 
           добавляем спец-класс скрытия видимости is-hidden-->
-            <div class="modal">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-                non neque earum recusandae beatae deserunt consectetur nemo quod
-                tempore dignissimos!
-              </p>
-              <button data-modal-close>закрыть</button>
+              <div class="modal">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Commodi non neque earum recusandae beatae deserunt consectetur
+                  nemo quod tempore dignissimos!
+                </p>
+                <button data-modal-close>закрыть</button>
+              </div>
             </div>
+            что-то не получилось..обратно закрывается быстро(было ошибочно
+            указано транслейт вместо транзишн)
           </div>
-        </div>
-      </section>
+        </section>
       </div>
     </section>
     <section class="perspective">
@@ -129,8 +127,9 @@
     </section>
     <section class="flop-perspective">
       <div class="container">
-        <h2>Флоп с перспективой</h2>
+        <h2>Флип с перспективой</h2>
       </div>
     </section>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
