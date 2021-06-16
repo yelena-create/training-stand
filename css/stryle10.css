@@ -1,0 +1,288 @@
+body {
+  width: 1200px;
+
+  /* margin: 0 auto; */
+  /* контент не залазил под хедер задаем паддинг по ширине хедера */
+  padding-top: 80px;
+  text-align: justify;
+}
+header .container {
+  background-color: aquamarine;
+}
+::before,
+::after {
+  box-sizing: border-box;
+}
+div {
+  display: block;
+}
+h2 {
+  font-size: 24;
+  text-decoration: underline;
+  color: red;
+}
+ul {
+  margin: 20px 0 50px;
+  list-style: none;
+}
+button {
+  margin: 0;
+  padding: 10px;
+  border-radius: 4px;
+}
+.container {
+  background-color: rgb(223, 212, 223);
+  padding: 50px;
+}
+.back {
+  font-size: 25px;
+  display: block;
+  margin-bottom: 15px;
+}
+.btn {
+  display: inline-flex;
+  border: none;
+  margin: 0;
+  padding: 10px 30px;
+  border-radius: 3px;
+  background-color: #008080;
+  color: rgb(255, 255, 255);
+  font: inherit;
+  cursor: pointer;
+  /* свво, кот хотим анимировать */
+  transition-property: background-color;
+  /* время перехода */
+  transition-duration: 500ms;
+  /* функция распределения времени */
+  /* transition-timing-function: linear; */
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /* задержка анимации */
+  transition-delay: 250ms;
+  /* можно записать в одну строку
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1  250ms)   */
+}
+.btn:hover,
+.btn:focus {
+  background-color: #d87093;
+}
+/* 3########## button_icon */
+.btn2 {
+  position: relative;
+  /* позиционируем афтер */
+  display: inline-flex;
+  border: none;
+  margin: 0;
+  padding: 10px 30px;
+  border-radius: 3px;
+  background-color: #a516b8;
+  color: #000;
+  font: inherit;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 250ms;
+  overflow: hidden;
+}
+.btn2:hover,
+.btn2:focus {
+  background-color: #e96296;
+}
+.btn2::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(240, 14, 82);
+  margin-right: 5px;
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 150ms;
+  background-image: url(/images/icons/facebook.svg);
+  background-size: contain;
+}
+.btn2:hover::before {
+  transform: translateY(-35px);
+}
+.btn2::after {
+  /* позициониpуем по центру(топ 50%) высоту подгоняем */
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  /* надо поднять на половину высоты */
+  /* transform: translateY(-50%); */
+  /*надо чтобы она находилась внизу до ховера, подгоняем по калькулятору */
+  transform: translateY(calc(-50% + 35px));
+  /* -50% конечная точка, +30px на сколько надо сдвинуть вниз */
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(52, 243, 14);
+  /* transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1); */
+  background-image: url(/images/icons/instagram.svg);
+  background-size: contain;
+}
+.btn2:hover::after {
+  transform: translateY(-50%);
+}
+/* ######### menu-anim-underline */
+.menu {
+  display: flex;
+}
+.menu-item:not(:last-child) {
+  margin-right: 10px;
+}
+.menu-link {
+  position: relative;
+  outline: 1px solid black;
+  display: block;
+
+  padding: 10px 20px;
+  text-decoration: none;
+  color: currentColor;
+}
+.menu-link::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: ' ';
+
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: red;
+  /* opacity: 0; */
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scaleX(0);
+
+  /* scale анимация  масштабирования*/
+}
+.menu-link:hover::after {
+  /* opacity: 1; */
+  transform: scaleX(1);
+}
+/* №№№№ карточка с оверлеем */
+div {
+  display: block;
+}
+ul {
+  margin: 20px 0 50px;
+  list-style: none;
+}
+button {
+  margin: 0;
+  padding: 10px;
+  border-radius: 4px;
+}
+.picture {
+  /* display: block; */
+  width: 100%;
+}
+.product {
+  width: 370px;
+  background-color: #fff;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.product-meta {
+  padding: 15px;
+}
+.product-name {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.product-price {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.product-thumb {
+  position: relative;
+  overflow: hidden;
+}
+/*  псевдоэлемент бефор */
+.product-overlay {
+  display: inline-block;
+  /* чтобы проявился надо задать выс и шир, в блочном элементе */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* левым верхним углом в верхний левый угол родителя */
+  content: '';
+  /* обязательное поле */
+  width: 100%;
+  height: 100%;
+  /* 100% высоты и ширины родителя, т.е. покрыть полностью */
+  background-color: rgba(255, 2, 2, 0.411);
+  opacity: 0;
+  /* делаем невидимым, чтобы анимировать на видимость */
+  transform: translateX(-100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product-thumb:hover .product-overlay {
+  opacity: 1;
+}
+.product:hover .product-overlay {
+  transform: translateX(0);
+}
+.product-actions .icon {
+  width: 32px;
+  height: 32px;
+}
+.product-actions {
+  outline: 3px solid orange;
+  /* display: flex; */
+  position: absolute;
+  /* top: 0%;
+  right: 0%; если менять.усложнять положение, смотри ниже*/
+  opacity: 0;
+  /* значит невидимка, ставим для ховера, статично скрыто */
+  transition: 500ms opacity linear;
+  /* плавное появление\скрытие за 500мс */
+}
+.product:hover .product-actions {
+  opacity: 1;
+  /* при наведении на карточку появляется блок кнопок */
+}
+
+/* при ховере по product-thumb возьми его before и покажи его */
+
+/* ------позиционирование по центру */
+.product-actions {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* первые 2строки говорят: левым верхним углом встань на 50%ширины и 50%высоты родителя. Трансформ с минусом значит: подвинься влево на 50% СВОЕЙ ширины и вниз на 50% СВОЕЙ высоты.. ЭТО ИДЕАЛЬНЫЙ ЦЕНТР */
+
+/* modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(137, 43, 226, 0.377);
+}
+.modal {
+  /* ПОРЯДОК ЗАПИСИ: ПОЗИЦИЯ, ГЕОМЕТРИЯ, ВСЕ ОСТАЛЬНОЕ!!! */
+  position: absolute;
+  /* центрируем */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background-color: #fff;
+  padding: 20px;
+}
+.annotation {
+  color: red;
+  font-size: 22px;
+}
+.is-hidden {
+  /* скрывает оверлей */
+  opacity: 0;
+  /* позволяет пробиться (кликнуть) через слой модалки к нашему контенту. т.к. оверлей стоит сверху, он не пропускает клик */
+  pointer-events: none;
+}

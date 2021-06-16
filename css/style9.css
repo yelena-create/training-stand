@@ -1,5 +1,4 @@
 body {
-  /* background-color: aquamarine; */
   width: 1200px;
   /* margin: 0 auto; */
   /* контент не залазил под хедер задаем паддинг по ширине хедера */
@@ -39,6 +38,7 @@ header {
 .container {
   padding: 50px;
 }
+/* #######lesson 9 */
 .positioing .text {
   text-align: center;
   font-size: 24px;
@@ -193,5 +193,9 @@ header {
   pointer-events: none;
 }
 .submenu a {
+  display: block;
   text-decoration: none;
+  color: black;
+  margin: 10px;
 }
+/*#######lesson10 */
