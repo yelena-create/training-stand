@@ -334,3 +334,38 @@ button {
   transform: scale(0);
   transition: transform 500ms linear;
 }
+/* ############### animation-keyframes */
+.content {
+  padding: 50px;
+  outline: auto;
+}
+.content-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  left: 0;
+  animation-name: white-circle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: alternate-reverse;
+}
+
+.content:hover .content-circle {
+  animation-play-state: paused;
+}
+
+@keyframes white-circle {
+  0% {
+    left: 0;
+  }
+  50% {
+    border-radius: 0%;
+  }
+
+  100% {
+    left: 500px;
+  }
+}
