@@ -1,0 +1,46 @@
+body {
+  width: 1200px;
+  /* margin: 0 auto; */
+  /* контент не залазил под хедер задаем паддинг по ширине хедера */
+  padding-top: 80px;
+  text-align: justify;
+}
+::before,
+::after {
+  box-sizing: border-box;
+}
+div {
+  display: block;
+}
+header {
+  background-color: paleturquoise;
+  padding: 20px;
+  font-size: 34px;
+  /* фиксированное положение хедера, надо задать выс и шир, иначе не видно */
+  position: fixed;
+  width: 100%;
+  min-height: auto;
+  /* чтобы хедер прилип к верху экрана  */
+  top: 0;
+  left: 0;
+  /* чтобы абсолютные элементы не перекрывали хедер,повышаем ему индекс  */
+  z-index: 100;
+}
+h2 {
+  font-size: 24;
+  text-decoration: underline;
+  color: red;
+}
+
+.container {
+  background-color: rgb(223, 212, 223);
+  padding: 50px;
+}
+header .container {
+  background-color: aquamarine;
+}
+/* -------------------------- */
+body {
+  line-height: 1.5;
+  color: #2a2a2a;
+}

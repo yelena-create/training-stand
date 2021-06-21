@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style11.css" />
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">назад на главную</a>
+    </header>
+    <section>
+      <div class="container">
+        <h2>разметка форм</h2>
+        <p>произвольная форма с использованием стандартных єлементов</p>
+        <p>
+          name, value, placeholder,autofocus, autocomplete, required, checked...
+        </p>
+        <form class="js-speaker-form">
+          <!-- вводим имя, телефон и почту инлайн-єлементы -->
+          <label for="name">Имя</label>
+          <input type="text" name="user-name" id="name" />
+          <br />
+          <label for="tel">Телефон</label>
+          <input type="tel" name="tel" id="tel" />
+          <br />
+          <label for="mail">Почта</label>
+          <input type="email" name="mail" id="mail" />
+          <button type="submit">Оставить заявку</button>
+
+          <!-- id name for-name автофокус при клике на инпут/ если они стоят рядом,у лейбла обязательный id, у лейбла обязательный for, чтобы функционал клика и фокуса работал . если инпут вложен в лейбл, айди и фор не нужны, т.к. связка происходит автоматически. при сложных эффектах оформления они стоят рядом.
+            button type="submit" - кнопка отправки формы
+         -->
+        </form>
+      </div>
+    </section>
+    <script>
+      (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`),
+            );
+          });
+      })();
+    </script>
+  </body>
+</html>
