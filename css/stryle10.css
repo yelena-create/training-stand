@@ -346,13 +346,28 @@ button {
   border-radius: 50%;
   position: relative;
   left: 0;
+  /* имя анимации, связующее */
   animation-name: white-circle;
+  /* продолжительность анимации  */
   animation-duration: 2s;
+  /* сценарий развития анимации между ключевыми кадрами, по умолч ease  см возможности кубика безье*/
   animation-timing-function: linear;
+  /* количество повторов */
   animation-iteration-count: infinite;
-  animation-duration: alternate-reverse;
+  /* тип и направления проигрывания , по умолч нормал. alternate-каждый четный проход в обратную сторону,  alternate-revers - каждый нечетный задом-наперед, revers-просто задом-наперед*/
+  animation-direction: alternate;
+  /* запуск или приостановка действия по событию. по умолч running-продолжать.  */
+  animation-play-state: running;
+  /* задержка анимации. если поставить отрицательное значение, проигрывание начнется с определенной части, смотри сколько стоит время проигрывания */
+  animation-delay: -1s;
+  /* какие значения анимированных свв применятся по завершению анимации. надо только отключить вечность.. */
+  animation-fill-mode: backwards;
+  /* краткая запись, можно неск значений, свва через пробел, зпт новое имя и свва */
+  animation: white-circle 2s linear infinite alternate running,
+    red-circle 2s linear infinite alternate running;
 }
 
+/* при добавлении псевдокласса можно изменять по наведению. если по наведению надо сбросить анимацию-значение none */
 .content:hover .content-circle {
   animation-play-state: paused;
 }
@@ -367,5 +382,16 @@ button {
 
   100% {
     left: 500px;
+  }
+}
+@keyframes red-circle {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: #fff;
   }
 }
