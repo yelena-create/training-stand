@@ -398,8 +398,10 @@ button {
 /* 2Д и 3Д трансформация  */
 .content-block div {
   color: #fff;
-  padding: 50px 0;
+  padding: 60px 0;
   text-align: center;
+  font-style: italic;
+  font-size: 26px;
   width: 150px;
   height: 150px;
   outline: 1px solid red;
@@ -407,11 +409,26 @@ button {
 p {
   padding: 10px;
 }
-/* translate */
+/*         translate */
 .content-translate {
   transform: translate(0px, 0px);
   position: relative;
+  top: 0px;
+  left: 0px;
+  background-color: #794f45;
+}
+.content-translate:hover {
   top: 30px;
   left: 30px;
-  background-color: #794f45;
+}
+/*         scale */
+.content-scale {
+  transform: scale(1, 1);
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background-color: #b861a5;
+}
+.content-scale:hover {
+  transform: scale(1.5);
 }
