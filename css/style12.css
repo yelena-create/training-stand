@@ -26,17 +26,165 @@ header {
   /* чтобы абсолютные элементы не перекрывали хедер,повышаем ему индекс  */
   z-index: 100;
 }
-h2 {
+/* h2 {
   font-size: 24;
   text-decoration: underline;
   color: red;
-}
+} */
 
 .container {
-  background-color: rgb(223, 212, 223);
+  background-color: rgb(245, 234, 245);
   padding: 50px;
 }
 header .container {
   background-color: aquamarine;
 }
 /* -------------------------- */
+h2 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.form {
+  outline: 1px solid red;
+  width: 528px;
+  /* height: 581px; */
+  padding: 40px;
+}
+
+/* .group {
+  margin-bottom: 20px;
+} */
+.form-field {
+  outline: 1px solid blue;
+
+  /* display: flex;
+  flex-direction: column; */
+  position: relative;
+  margin-bottom: 20px;
+}
+.form-label {
+  /* margin-bottom: 4px;
+  margin-top: 10px; */
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  transition: transform 250ms linear;
+}
+.form-input {
+  /* background-color: inherit; */
+  margin: 0;
+  font: inherit;
+  width: 100%;
+  padding: 12px 0 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translate(-40px, -41px);
+}
+.comment {
+  padding: 12px 16px;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+/* .form-field [type='checkbox'] {
+  flex-direction: row;
+} */
+button {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 55px;
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(160, 88, 167);
+  transform: translateY(-50%);
+}
+.form-input:focus ~ .icon {
+  background-color: red;
+}
+/* second form -------------------- */
+.form2 {
+  outline: 1px solid red;
+  width: 528px;
+  /* height: 581px; */
+  padding: 40px;
+}
+.group {
+  margin-bottom: 20px;
+}
+.form-field2 {
+  display: block;
+  outline: 1px solid blue;
+  /* display: flex;
+  flex-direction: column; */
+  position: relative;
+  margin-bottom: 20px;
+}
+.form-label2 {
+  /* margin-bottom: 4px;
+  margin-top: 10px; */
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  transition: transform 250ms linear;
+}
+.form-input2 {
+  margin: 0;
+  font: inherit;
+  width: 100%;
+  padding: 12px 0 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.comment {
+  padding: 12px 16px;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+/* .form-field [type='checkbox'] {
+  flex-direction: row;
+} */
+button {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 55px;
+}
+.icon2 {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(160, 88, 167);
+  transform: translateY(-50%);
+}
+/* form-field2, когда внутри нее происходит фокус, ведет себя так: */
+.form-field2:focus-within > .icon2 {
+  background-color: rgb(255, 61, 2);
+}
+
+/* .form-field2:focus-within > .form-label2 {
+  transform: translateY(-50%);
+} */
+
+.form-field2:not(:placeholder-shown) + .form-label2 {
+  transform: translateY(-100%);
+}

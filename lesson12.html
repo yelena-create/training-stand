@@ -8,8 +8,124 @@
     <link rel="stylesheet" href="./css/style12.css" />
   </head>
   <body>
-    <header>
-      <a href="./index.html">назад на главную</a>
-    </header>
+    <div class="container">
+      <header>
+        <a href="./index.html">назад на главную</a>
+      </header>
+      <h2>домашка - модалка</h2>
+      <p>
+        почему поля формы при ширине 100% вылазят за родителя???<br />потому что
+        паддинг надо дать только верх и низ
+      </p>
+      <form class="form">
+        <div class="group">
+          <h2>Оставьте свои данные, мы вам перезвоним</h2>
+          <div class="form-field">
+            <input
+              type="text"
+              class="form-input"
+              id="name"
+              autocomplete="off"
+              placeholder=" "
+            />
+            <label for="name" class="form-label">Имя</label>
+            <span class="icon"></span>
+          </div>
+          <div class="form-field">
+            <input
+              type="text"
+              class="form-input"
+              id="tel"
+              autocomplete="off"
+              placeholder=" "
+            />
+            <label for="tel" class="form-label">Телефон</label>
+            <span class="icon"></span>
+          </div>
+          <div class="form-field">
+            <input
+              type="email"
+              class="form-input"
+              id="mail"
+              autocomplete="off"
+              placeholder=" "
+            />
+            <label for="mail" class="form-label">Почта</label>
+            <span class="icon"></span>
+          </div>
+          <!-- <div class="form-field">
+          <textarea
+            class="comment"
+            name="comment"
+            id="comment"
+            rows="10"
+            placeholder="Введите текст"
+          ></textarea>
+          <label for="comment" class="form-label">Комментарий</label>
+        </div>
+      </div> -->
+
+          <!-- <div class="checkbox">
+        <input
+          class="form-input"
+          type="checkbox"
+          name="confidential"
+          id="policy"
+        />
+        <label for="policy" class="form-label">
+          Соглашаюсь с рассылкой и принимаю
+          <a href="">Условия договора</a>
+        </label>
+      </div> -->
+
+          <div class="form-field">
+            <button type="submit">Отправить</button>
+          </div>
+        </div>
+      </form>
+
+      <br /><br /><br /><br /><br />
+
+      <!-- ------убираем див и id и пакуем все в лейбл-------------- -->
+      <form class="form2">
+        <div class="group">
+          <h2>Оставьте свои данные, мы вам перезвоним</h2>
+          <label class="form-field2">
+            <input
+              class="form-input2"
+              type="text"
+              autocomplete="off"
+              placeholder=" "
+            />
+            <span class="form-label2">Имя</span>
+            <span class="icon2"></span>
+          </label>
+
+          <label class="form-field2">
+            <input
+              type="text"
+              class="form-input2"
+              autocomplete="off"
+              placeholder=" "
+            />
+            <span class="form-label2">Телефон</span>
+            <span class="icon2"></span>
+          </label>
+          <label class="form-field2">
+            <input
+              type="email"
+              class="form-input2"
+              autocomplete="off"
+              placeholder=" "
+            />
+            <span class="form-label2">Письмо</span>
+            <span class="icon2"></span>
+          </label>
+          <div class="form-field2">
+            <button type="submit">Отправить</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
