@@ -12,10 +12,10 @@
       <header>
         <a href="./index.html">назад на главную</a>
       </header>
-      <h2>домашка - модалка</h2>
+      <h2>old school - через div и id</h2>
       <p>
         почему поля формы при ширине 100% вылазят за родителя???<br />потому что
-        паддинг надо дать только верх и низ
+        надо обязательно указать box-sizing:border-box
       </p>
       <form class="form">
         <div class="group">
@@ -53,19 +53,18 @@
             <label for="mail" class="form-label">Почта</label>
             <span class="icon"></span>
           </div>
-          <!-- <div class="form-field">
-          <textarea
-            class="comment"
-            name="comment"
-            id="comment"
-            rows="10"
-            placeholder="Введите текст"
-          ></textarea>
-          <label for="comment" class="form-label">Комментарий</label>
+          <div class="form-field">
+            <label for="comment" class="form-label-comment">Комментарий</label>
+            <textarea
+              class="form-input"
+              name="comment"
+              id="comment"
+              rows="10"
+              placeholder="Введите текст"
+            ></textarea>
+          </div>
         </div>
-      </div> -->
-
-          <!-- <div class="checkbox">
+        <!-- <div class="checkbox">
         <input
           class="form-input"
           type="checkbox"
@@ -77,14 +76,13 @@
           <a href="">Условия договора</a>
         </label>
       </div> -->
-
-          <div class="form-field">
-            <button type="submit">Отправить</button>
-          </div>
+        <div class="form-field button">
+          <button type="submit">Отправить</button>
         </div>
       </form>
 
       <br /><br /><br /><br /><br />
+      <h2>new - вкладываем input в label и убираем id и for</h2>
 
       <!-- ------убираем див и id и пакуем все в лейбл-------------- -->
       <form class="form2">

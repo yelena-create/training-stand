@@ -39,7 +39,7 @@ header {
 header .container {
   background-color: aquamarine;
 }
-/* -------------------------- */
+/* --------old school----------- */
 h2 {
   text-align: center;
   margin-bottom: 12px;
@@ -55,23 +55,26 @@ h2 {
 /* .group {
   margin-bottom: 20px;
 } */
-.form-field {
+.form-field:not(:last-child) {
   outline: 1px solid blue;
-
-  /* display: flex;
-  flex-direction: column; */
   position: relative;
   margin-bottom: 20px;
 }
 .form-label {
-  /* margin-bottom: 4px;
-  margin-top: 10px; */
   position: absolute;
   top: 50%;
   left: 40px;
   transform: translateY(-50%);
   transition: transform 250ms linear;
 }
+/* .form-label-comment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-50px);
+  transition: transform 250ms linear;
+} */
+
 .form-input {
   /* background-color: inherit; */
   margin: 0;
@@ -85,6 +88,12 @@ h2 {
 .form-input:not(:placeholder-shown) + .form-label {
   transform: translate(-40px, -41px);
 }
+/* селектор атрибута тега, отступ от края */
+[placeholder] {
+  padding-left: 50px;
+  box-sizing: border-box;
+}
+
 .comment {
   padding: 12px 16px;
   height: 120px;
@@ -95,6 +104,9 @@ h2 {
 /* .form-field [type='checkbox'] {
   flex-direction: row;
 } */
+.form-field.button {
+  display: flex;
+}
 button {
   margin-top: 30px;
   margin-left: auto;
@@ -157,9 +169,6 @@ button {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
-/* .form-field [type='checkbox'] {
-  flex-direction: row;
-} */
 button {
   margin-top: 30px;
   margin-left: auto;
@@ -181,10 +190,10 @@ button {
   background-color: rgb(255, 61, 2);
 }
 
-/* .form-field2:focus-within > .form-label2 {
-  transform: translateY(-50%);
-} */
-
-.form-field2:not(:placeholder-shown) + .form-label2 {
-  transform: translateY(-100%);
+.form-field2:focus-within > .form-label2,
+.form-input2:not(:placeholder-shown) + .form-label2 {
+  transform: translate(-42px, -41px);
 }
+/* .form-field2:not(:placeholder-shown) + .form-label2 {
+  transform: translate(-42px, -40px);
+} */
