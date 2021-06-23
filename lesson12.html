@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Lesson 12</title>
     <link rel="stylesheet" href="./css/style12.css" />
   </head>
   <body>
@@ -16,6 +16,10 @@
       <p>
         почему поля формы при ширине 100% вылазят за родителя???<br />потому что
         надо обязательно указать box-sizing:border-box
+      </p>
+      <p>
+        не получается так выезжать с комментарием, то 50% он берет от себя, то
+        абсолютно почему-то вообще относительно всей стр...
       </p>
       <form class="form">
         <div class="group">
@@ -124,6 +128,112 @@
           </div>
         </div>
       </form>
+
+      <!--  ---------------------- -->
+      <h2>Кастомные чекбоксы</h2>
+      <p>
+        сделанные кем-то.. <br />родной импут прячется, вставляется кастомный, в
+        данном случае иконка
+      </p>
+      <p>как правильно прятать чек: display VS appearance VS visually:hidden</p>
+      <p>
+        display:block чтобы совсем вырвать из докта, но читалки и кнопки его
+        видят и фокусируют
+      </p>
+      <p>opacity: ; читается, да. но занимает геометрию...</p>
+      <p>
+        appearance - сбрасывает все дефолтные стили от браузера , еще не везде
+        работает, надо через префикс/ а position: absolute; вообще поднимет его
+        над доктом.
+      </p>
+      <p>если делать анимацию чекбокса, тогда инлайн свг</p>
+      <a
+        href="https://www.youtube.com/watch?v=E6kLaaQFctU&ab_channel=VadimMakeev"
+        >Кастомные чекбоксы правильно от Макеева</a
+      >
+      <form class="form">
+        <ul>
+          <li>
+            <label class="field">
+              <input
+                class="checkbox visually-hidden"
+                type="checkbox"
+                name="topic"
+                value="html"
+              />
+              <span class="icons"></span>
+              <span class="label">html</span>
+            </label>
+          </li>
+          <li>
+            <label class="field">
+              <input
+                class="checkbox visually-hidden"
+                type="checkbox"
+                name="topic"
+                value="css"
+              />
+              <span class="icons"></span>
+              <span class="label">css</span>
+            </label>
+          </li>
+          <li>
+            <label class="field"
+              ><input
+                class="checkbox visually-hidden"
+                type="checkbox"
+                name="topic"
+                value="javascript"
+                id="javascript"
+              />
+              <span class="icons"></span>
+              <span class="label">javascript</span></label
+            >
+          </li>
+        </ul>
+        <button type="submit">Оставить заявку</button>
+      </form>
+      <br />
+      <p>скрипт "отправки"</p>
+      <pre>
+        (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`),
+            );
+          });
+      })();
+      </pre>
+      <br />
+      <pre>
+            .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;}
+          </pre
+      >
     </div>
+    <script>
+      (() => {
+        document
+          .querySelector('.js-speaker-form')
+          .addEventListener('submit', e => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`),
+            );
+          });
+      })();
+    </script>
   </body>
 </html>

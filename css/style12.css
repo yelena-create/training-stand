@@ -194,6 +194,60 @@ button {
 .form-input2:not(:placeholder-shown) + .form-label2 {
   transform: translate(-42px, -41px);
 }
-/* .form-field2:not(:placeholder-shown) + .form-label2 {
-  transform: translate(-42px, -40px);
-} */
+
+/* как прятать чекбокс */
+.checkbox:checked {
+  /* position: absolute; */
+  /* в активном состоянии */
+  /* width: 30px;
+  height: 30px; */
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  /* в идеале, в будущем */
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute; */
+}
+.icons {
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  /* background-color: tomato; */
+  border: 2px solid #2a2a2a;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.checkbox:checked + .icons {
+  background-color: #03a6f1;
+  background-image: url(../images/icons/icon-check.svg);
+  background-size: contain;
+  /* фон занимает  место не только внутри бордера, но и его место тоже */
+  background-origin: border-box;
+  border-color: #03a6f1;
+}
+.field {
+  display: flex;
+  align-items: center;
+  /* outline: 1px solid rgba(0, 255, 128, 0.212); */
+}
+
+li {
+  margin-bottom: 10px;
+}
+.label {
+  transition: transform 250ms linear;
+}
+.checkbox:checked ~ .label {
+  transform: translateX(20px);
+}
