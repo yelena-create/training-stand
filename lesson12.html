@@ -194,8 +194,9 @@
         <button type="submit">Оставить заявку</button>
       </form>
       <br />
-      <p>скрипт "отправки"</p>
-      <pre>
+      <div class="help">
+        <pre>
+          <p>скрипт "отправки"</p>
         (() => {
         document
           .querySelector('.js-speaker-form')
@@ -208,8 +209,8 @@
           });
       })();
       </pre>
-      <br />
-      <pre>
+        <br />
+        <pre>
             .visually-hidden {
         position: absolute;
         width: 1px;
@@ -220,20 +221,21 @@
         clip: rect(0 0 0 0);
         overflow: hidden;}
           </pre
-      >
-    </div>
-    <script>
-      (() => {
-        document
-          .querySelector('.js-speaker-form')
-          .addEventListener('submit', e => {
-            e.preventDefault();
+        >
+      </div>
+      <script>
+        (() => {
+          document
+            .querySelector('.js-speaker-form')
+            .addEventListener('submit', e => {
+              e.preventDefault();
 
-            new FormData(e.currentTarget).forEach((value, name) =>
-              console.log(`${name}: ${value}`),
-            );
-          });
-      })();
-    </script>
+              new FormData(e.currentTarget).forEach((value, name) =>
+                console.log(`${name}: ${value}`),
+              );
+            });
+        })();
+      </script>
+    </div>
   </body>
 </html>
