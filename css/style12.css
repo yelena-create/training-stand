@@ -1,9 +1,11 @@
 body {
   width: 1200px;
+  margin: 0 auto;
   /* margin: 0 auto; */
   /* контент не залазил под хедер задаем паддинг по ширине хедера */
   padding-top: 80px;
   text-align: justify;
+  color: #212121;
 }
 ::before,
 ::after {
@@ -194,14 +196,14 @@ button {
 .form-input2:not(:placeholder-shown) + .form-label2 {
   transform: translate(-42px, -41px);
 }
-
-/* как прятать чекбокс */
-.checkbox:checked {
-  /* position: absolute; */
-  /* в активном состоянии */
-  /* width: 30px;
-  height: 30px; */
+/*  */
+.content {
+  margin: 0 auto;
+  padding: 20px 100px;
+  text-align: center;
 }
+/* кастомные чекбоксы от Макеева*/
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -228,9 +230,12 @@ button {
   border-radius: 4px;
   margin-right: 10px;
 }
+.checkbox:focus + .icons {
+  outline: auto;
+}
 .checkbox:checked + .icons {
   background-color: #03a6f1;
-  background-image: url(../images/icons/icon-check.svg);
+  background-image: url(../images/icons/check-on.svg);
   background-size: contain;
   /* фон занимает  место не только внутри бордера, но и его место тоже */
   background-origin: border-box;
@@ -251,7 +256,172 @@ li {
 .checkbox:checked ~ .label {
   transform: translateX(20px);
 }
+
+/* ------------help----- */
 .help {
+  outline: 2px solid red;
   flex-direction: row;
   display: flex;
 }
+/* как спрятать инпут;  Makeev video*/
+.option {
+  display: block;
+  margin-bottom: 0.25em;
+}
+.check {
+  padding-left: 15px;
+}
+/* .check__input { */
+/* спрятался совсем,убрался и пробел*/
+/* position: absolute; */
+/* скрывает с глаз, читалки видят */
+/* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+} */
+/* спсб для старых браузеров, напр Е11
+appearance не работает */
+.check__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.check__box {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  background-image: url(../images/icons/check-off.svg);
+  background-color: pink;
+  margin-left: -20px;
+}
+/* -----checked----- */
+.check__input:checked + .check__box {
+  background-image: url(../images/icons/check-on-focused.svg);
+}
+
+/* -----focused----- */
+
+/* когда инпут в фокусе(с клавы) он выкл(первая пустая картинка) */
+.check__input:focus + .check__box {
+  background-image: url(../images/icons/check-off-focused.svg);
+  outline: 2px solid blueviolet;
+}
+/* когда инпут в фокусе и чекнут, появляется вторая с флажком картинка  */
+.check__input:checked:focus + .check__box {
+  background-image: url(../images/icons/check-on.svg);
+  outline: none;
+}
+/* (после названия иконки перед свг ставится -focused) не обязательно */
+
+/* ----disabled---- */
+.check__input:disabled + .check__box {
+  background-image: url(../images/icons/check-off-disabled.svg);
+  outline: 2px solid blueviolet;
+}
+/* когда инпут в фокусе и чекнут, появляется вторая с флажком картинка  */
+.check__input:checked:disabled + .check__box {
+  background-image: url(../images/icons/check-on.svg);
+  outline: none;
+}
+/*  картинка инлайном */
+.check__box1 {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  background-image: url('data:image/svg+xml,%3Csvg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M14.2222 1.66667V13.3333H1.77778V1.66667H14.2222ZM14.2222 0H1.77778C0.8 0 0 0.75 0 1.66667V13.3333C0 14.25 0.8 15 1.77778 15H14.2222C15.2 15 16 14.25 16 13.3333V1.66667C16 0.75 15.2 0 14.2222 0Z" fill="red"/%3E%3C/svg%3E');
+  background-color: pink;
+  margin-left: -20px;
+}
+.check__input:checked + .check__box1 {
+  background-image: url('data:image/svg+xml,%3Csvg width="16" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M3.957 7.752l-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422z" fill="%23fff" stroke="%23fff" stroke-width=".2"/%3E%3C/svg%3E');
+  outline: none;
+}
+.check__input:focus + .check__box1 {
+  background-image: url('data:image/svg+xml,%3Csvg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M14.2222 1.66667V13.3333H1.77778V1.66667H14.2222ZM14.2222 0H1.77778C0.8 0 0 0.75 0 1.66667V13.3333C0 14.25 0.8 15 1.77778 15H14.2222C15.2 15 16 14.25 16 13.3333V1.66667C16 0.75 15.2 0 14.2222 0Z" fill="red"/%3E%3C/svg%3E');
+  outline: 2px solid blueviolet;
+}
+.check__input:checked:focus + .check__box1 {
+  background-image: url('data:image/svg+xml,%3Csvg width="16" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M3.957 7.752l-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422z" fill="%23fff" stroke="%23fff" stroke-width=".2"/%3E%3C/svg%3E');
+  outline: none;
+}
+
+/* Чекбокс стилями */
+.check__box2 {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  box-shadow: 0 0 0 0.1em #4a90e2;
+  margin-left: -20px;
+  margin-top: 0;
+  border-radius: 4px;
+  background-color: rgba(82, 246, 123, 0.466);
+}
+/* -----checked----- */
+.check__input:checked + .check__box2 {
+  background-color: rgba(117, 19, 126, 0.466);
+  background-image: url(../images/icons/check-on.svg);
+}
+
+/* -----focused----- */
+
+.check__input:focus + .check__box2 {
+  box-shadow: 0 0 0 0.2em rgb(68, 6, 80);
+
+  /* outline: 2px solid blueviolet; */
+}
+.check__input:disabled + .check__box2 {
+  box-shadow: 0 0 0 0.1em darkgray;
+}
+
+.check__input:checked:disabled + .check__box2 {
+  background-color: darkgray;
+}
+
+/* Чекбокс  инлайном */
+.check3 {
+  padding-left: 1.2em;
+}
+.check__input3 {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.check__box3 {
+  position: absolute;
+  margin-left: -1.2em;
+  width: 1em;
+  height: 1em;
+}
+.check__focus3 {
+  fill: none;
+}
+.chesk__square3 {
+  fill: #ffffff;
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+.check__mark3 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3px;
+}
+/* checked */
+.check__input3:checked + * .chesk__square3 {
+  fill: #4a90e2;
+}
+/* focused */
+.check__input3:focus + * /.checkbox:focus3 {
+  fill: #7ed321;
+}
+/* disabled */
+.check__input3:disabled + * .chesk__square3 {
+  stroke: #9b9b9b;
+}
+.check__input3:checked:disabled + * .chesk__square3 {
+  fill: #9b9b9b;
+}
+/*  */
